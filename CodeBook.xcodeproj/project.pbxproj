@@ -97,6 +97,13 @@
 			path = SimpleModel;
 			sourceTree = "<group>";
 		};
+		D410CBD82ADD32E9003C9BBE /* tmp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tmp;
+			sourceTree = "<group>";
+		};
 		D4FC3B302A806BBE00EAA627 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +127,7 @@
 		D4FC3B3B2A806BBE00EAA627 /* CodeBook */ = {
 			isa = PBXGroup;
 			children = (
+				D410CBD82ADD32E9003C9BBE /* tmp */,
 				D410CBD52ADD0FCF003C9BBE /* SimpleModel */,
 				D410CBCB2ADD0E5D003C9BBE /* XYTable */,
 				D4FC3B3C2A806BBE00EAA627 /* CodeBookApp.swift */,

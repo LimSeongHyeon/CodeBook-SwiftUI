@@ -20,7 +20,7 @@ struct TimeTableHeader<T: Identifiable>
 struct TimeTableCellData<T>: Identifiable
 {
     var id = UUID()
-    var height: CGFloat
+    var length: CGFloat
     var offset: CGFloat
     var data: T
 }
@@ -32,4 +32,5 @@ struct TimeTableLine<T: Identifiable>: Identifiable
     var headerID: UUID
     var datas: [TimeTableCellData<T>]
 }
+
 

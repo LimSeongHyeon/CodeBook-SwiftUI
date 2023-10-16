@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class XYTableOptions<ColumnHeader: Identifiable, RowHeader: Identifiable, CellType: Identifiable,
+class TableOptions<ColumnHeader: Identifiable, RowHeader: Identifiable, CellType: Identifiable,
                         RowContent: View, ColumnContent: View, CellContent: View>: ObservableObject
 {
     @Published var toRowHeaderLabel: ((RowHeader) -> RowContent)? = nil
@@ -20,7 +20,7 @@ class XYTableOptions<ColumnHeader: Identifiable, RowHeader: Identifiable, CellTy
     @Published var tablePriority: TablePriority = .column
     @Published var rowHeaderAlignment: RowHeaderAlignment = .center
     @Published var columnHeaderAlignment: ColumnHeaderAlignment = .center
-    @Published var correctionValue: CGFloat = 12
+    @Published var correctionValue: CGFloat = 0
 }
 
 
@@ -49,3 +49,13 @@ enum GridType: String
     case vertical, horizontal
 }
 
+struct ViewOffsetKey: PreferenceKey
+{
+    typealias Value = CGPoint
+    static var defaultValue = CGPoint.zero
+    static func reduce(value: inout Value, nextValue: () -> Value)
+    {
+        value.x += nextValue().x
+        value.y += nextValue().y
+    }
+}
